@@ -1,0 +1,25 @@
+{
+  "name": "dbchallenge",
+  "version": "1.0.0",
+  "description": "Sprint Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "yes"
+  },
+  "keywords": [
+    "sprint"
+  ],
+  "author": "Anthony Vigliotta",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^3.20.1",
+    "knex": "^0.19.3",
+    "nodemon": "^1.19.1",
+    "sqlite3": "^4.1.0"
+  }
+}
