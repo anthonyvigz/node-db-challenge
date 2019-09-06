@@ -1,7 +1,6 @@
 const express = require('express');
 
 const taskModel = require('../tasks/taskModel.js')
-const projectModel = require('../projects/projectModel.js');
 
 const router = express.Router();
 
@@ -24,25 +23,9 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', validateTaskId, async (req, res) => {
+router.get('/:id', async (req, res) => {
         res.status(200).json(req.task);
 });
-
-
-async function validateTaskId (req, res, next) {
-    try {
-        
-        const task = await taskModel.getById(req.params.id);
-        if (!task) {
-            res.status(404).json({ message:'Invalid task id' });
-        } else {
-            req.task = task;
-            next();
-        }
-    } catch (err) {
-        res.status(500).json({ message:"There was an error while validating task id" });
-    }
-};
 
 
 module.exports = router;

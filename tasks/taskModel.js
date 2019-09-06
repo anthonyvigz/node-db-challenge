@@ -25,7 +25,6 @@ function getById(id) {
         .then(task => mappers.actionToBody(task));
 }
 
-//inserts task then gets us newly added action back as output
 function insert(task) {
     return db('tasks')
         .insert(task)
